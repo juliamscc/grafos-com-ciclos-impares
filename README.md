@@ -9,10 +9,10 @@ BCC/UESPI: Bloco VII
 
 ## ▶️ Como usar
 
-###Cycle With Odd Length <br>
+### Cycle With Odd Length <br>
 Execute o código e o programa irá retornar "Sim" se conter ciclos ímpares, do contrário "Não". <br>
 Para alterar o grafo que será executado mude na linha 3 o caminho para o grafo desejado (arquivo ".txt"). 
 
-###Cycle With Odd Weight Sum <br>
+### Cycle With Odd Weight Sum <br>
 Execute o código e o programa irá retornar "Existem ciclos com peso ímpar no grafo." se conter um ciclos com a soma dos pesos ímpar, do contrário "Não existem ciclos com peso ímpar no grafo.". <br>
 Para alterar o grafo que será executado mude na linha 3 o caminho para o grafo desejado (arquivo ".txt").
