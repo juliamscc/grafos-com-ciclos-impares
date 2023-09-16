@@ -1,3 +1,12 @@
+# Função para criar a lista de arestas
+def createListOfEdges(graph):
+	listofedges = graph[1:]
+	edges = []
+	for i in listofedges:
+		e = list(map(int, i.split(' ')))
+		edges.append(e)
+	return edges
+
 # Função verifica se uma subparte da floresta pode ser colorida com duas cores
 def twoColorUtil(G, src, colorArr):
 	colorArr[src] = 1 # Colore o nó com a primeira cor
@@ -28,15 +37,16 @@ def twoColor(G, numNodes):
 			return True
 
 # Função que verifica a existência de ciclos ímpares
-def isOddSum(edges, numNodes, m):
+def isOddSum(edges, numNodes):
 	G = [[] for i in range(2*numNodes)] # Acrescenta um pseudo nó para cada aresta (no caso de todas serem pares)
 	
 	pseudo = numNodes + 1
 	pseudo_count = 0
 
-	for i in range(0, m): # Percorre as arestas
+	for i in range(1, len(edges)): # Percorre as arestas
 		u = edges[i][0] # Recebe o primeiro nó da aresta
 		v = edges[i][1] # Recebe o segundo nó da aresta
+
 		if edges[i][2] % 2 == 1: # Se o peso for ímpar, apenas adiciona a aresta no grafo
 			G[u].append(v)
 			G[v].append(u)
@@ -48,16 +58,25 @@ def isOddSum(edges, numNodes, m):
 			G[pseudo].append(v)
 			pseudo_count += 1
 			pseudo += 1
-	return twoColor(G, numNodes + pseudo_count)
+		
+		if twoColor(G, numNodes + pseudo_count):
+			return False
+	return True
 
 if __name__ == "__main__":
-	numNodes, m = 4, 3
-	edges = [[1, 2, 12],
-			[2, 3, 1],
-			[4, 3, 1],
-			[4, 1, 20]]
+# Leitura dos arquivos de texto
+	with open("testes\cows-test2.txt", "r") as file:
+		text = file.read()
 
-	if isOddSum(edges, numNodes, m) == True:
-		print("Não existem ciclos com peso ímpar no grafo.")
-	else:
+	# graph = text.split('\n')
+
+	# numNodes = int(graph[0])
+	# edges = createListOfEdges(graph) 
+	# print(edges)
+	numNodes = 3
+	edges = [[1, 2, 1], [2, 3, 1], [1, 3, 1]]
+
+	if isOddSum(edges, numNodes) == True:
 		print("Existem ciclos com peso ímpar no grafo.")
+	else:
+		print("Não existem ciclos com peso ímpar no grafo.")
