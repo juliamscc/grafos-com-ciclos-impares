@@ -16,5 +16,5 @@ BCC/UESPI: Bloco VII
 
 ### 2- Cycle With Odd Weight Sum <br>
 - Execute o código e o programa irá retornar <strong>"Existem ciclos com peso ímpar no grafo"</strong> se conter um ciclos com a soma dos pesos ímpar, do contrário <strong>"Não existem ciclos com peso ímpar no grafo"</strong>. <br>
-- Para alterar o grafo que será executado mude na linha <strong>57</strong> o caminho para o grafo desejado (arquivo ".txt").
+- Para alterar o grafo que será executado mude na <strong>linha 57</strong> o caminho para o grafo desejado (arquivo ".txt").
 > Neste caso o aquivo ".txt" deve seguir a seguinte formatação: A 1ª linha será a quantidade de vértices, às demais linhas seram a representação das arestas, sendo que o último número será o peso daquele vértice.
