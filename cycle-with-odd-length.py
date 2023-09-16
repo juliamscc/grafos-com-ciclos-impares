@@ -1,5 +1,11 @@
 import queue
 
+with open("testes\col-teste3.txt", "r") as arquivo:
+        lista_dados = [linha.strip() for linha in arquivo]
+        # print(lista_dados, type(lista_dados[0]))
+
+lista_convertida = [list(map(int, lista_dados.split(','))) for lista_dados in lista_dados]
+
 #Função principal que determinará se o grafo G é bipartido.
 #Indetificando se este contém ciclo ímpar
 def containsOdd(G, src):
@@ -51,13 +57,11 @@ def containsOdd(G, src):
 V = 4
 
 #Matriz do grafo teste
-G = [[0, 1, 0, 1],
-	[1, 0, 1, 0],
-	[0, 1, 0, 1],
-	[1, 0, 1, 0]]
+G = (lista_convertida)
+# print(lista_convertida)
 
 #Se G conter ciclos ímpares retorna Sim, do contrário Não 
 if containsOdd(G, 0):
-	print("Yes")
+	print("Sim")
 else:
-	print("No")
+	print("Não")
