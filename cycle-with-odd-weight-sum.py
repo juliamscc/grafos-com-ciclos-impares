@@ -45,6 +45,7 @@ def isOddSum(edges, numNodes):
 		v = edge[1] # Recebe o segundo nó da aresta
 		weight = edge[2] # Recebe o peso da aresta
 
+	# Adiciona as arestas com peso ímpar
 		if weight % 2 == 1:
 			G[u-1].append(v-1)
 			G[v-1].append(u-1)
