@@ -1,6 +1,6 @@
 import queue
 
-with open("testes\col-teste3.txt", "r") as arquivo:
+with open("testes\col-teste2.txt", "r") as arquivo:
         lista_dados = [linha.strip() for linha in arquivo]
         # print(lista_dados, type(lista_dados[0]))
 
@@ -54,7 +54,7 @@ def containsOdd(G, src):
 	return False
 
 #Númer o de vértices	
-V = 4
+V = len(lista_convertida)
 
 #Matriz do grafo teste
 G = (lista_convertida)
